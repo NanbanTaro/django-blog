@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
-    <h1>{{title}}</h1>
+    <header>
+        <h1 class="headline">
+            {{title}}
+        </h1>
+        <ul class="header-list">
+            <li class="header-list-item">
+                <a class="header-link" href="{% url 'index' %}">
+                    Top
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a class="header-link" href="{% url 'introduction' %}">
+                    自己紹介
+                </a>
+            </li>
+        </ul>
+    </header>
     <p>{{message}}</p>
     <p>
         <a href="{% url 'index' %}">
