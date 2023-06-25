@@ -9,14 +9,14 @@ pip 20.2.3
 pip install django <br>
 python -m django startproject django_blog <br>
 cd django_blog <br>
-python manage.py runserver  <br>
+python manage.py runserver <br>
 
 # create Application(ex. AppName is Wellcome)
 cd django_blog <br>
 python manage.py startapp blog <br>
 
 # create SuperUser
-python manage.py createsuperuser
-USERNAME: xxxxx
-E-MAIL: xxxxx@gmail.com
-PASSWORD: xxxxxx
+python manage.py createsuperuser <br>
+USERNAME: xxxxx <br>
+E-MAIL: xxxxx@gmail.com <br>
+PASSWORD: xxxxxx <br>
