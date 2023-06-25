@@ -24,8 +24,13 @@
             </li>
         </ul>
     </header>
-    <p>{{message}}</p>
-    <p>
+    <h2 class="main">
+        {{ post.title }}
+    </h2>
+    <p class="main">
+        {{ post.text }}
+    </p>
+    <p class="main">
         <a href="{% url 'index' %}">
             戻る
         </a>

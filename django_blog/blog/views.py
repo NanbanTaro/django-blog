@@ -1,19 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
 title = '開発者ブログ'
 
 def index(request):
+    posts = Post.objects.all()
     params = {
         'title': title,
-        'message': 'テストページです。'
+        'posts': posts
     }
     return render(request, 'blog/index.html', params)
 
-def detail(request):
+def detail(request, post_id):
+    post = Post.objects.get(id=post_id)
     params = {
         'title': title,
-        'message': '詳細ページです。'
+        'id': post_id,
+        'post': post
     }
     return render(request, 'blog/detail.html', params)
 

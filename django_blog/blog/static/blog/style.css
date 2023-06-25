@@ -36,8 +36,12 @@ header .headline {
 }
 
 .main {
-    margin: 0 50px;
+    margin: 10px 50px;
     color: black;
+}
+
+.sub {
+    margin: 0px 50px;
 }
 
 .link {

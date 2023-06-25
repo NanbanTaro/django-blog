@@ -24,14 +24,29 @@
             </li>
         </ul>
     </header>
-    <p class="main">
-        {{message}}
-    </p>
-    <p>
-        <a class="link" href="{% url 'detail' %}">
-            詳しく読む
-        </a>
-    </p>
+    {% for post in posts %}
+    <div>
+        <h2 class="main">
+            {{ post.title }}
+        </h2>
+        <p class="main">
+            {{ post.text | truncatechars:120 }}
+        </p>
+        <p class="main">
+            <a class="link" href="{% url 'detail' post.id %}">
+                詳しく読む
+            </a>
+        </p>
+        <p class="sub">
+            投稿日時：
+            {{ post.posted_at }}
+        </p>
+        <p class="sub">
+            更新日　：
+            {{ post.updated_at }}
+        </p>
+    </div>
     <hr />
+    {% endfor %}
 </body>
 </html>
