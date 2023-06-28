@@ -25,26 +25,34 @@
         </ul>
     </header>
     {% for post in posts %}
-    <div>
+    <div class="container">
         <h2 class="main">
             {{ post.title }}
         </h2>
-        <p class="main">
-            {{ post.text | truncatechars:120 }}
-        </p>
+        <div class="post">
+            <div class="post_text">
+                {{ post.text | truncatechars:120 }}
+            </div>
+            <div>
+                {% if post.image %}
+                <img class="post_image" src="{{ post.image.url }}">
+                {% endif %}
+            </div>
+        </div>
         <p class="main">
             <a class="link" href="{% url 'detail' post.id %}">
                 詳しく読む
             </a>
         </p>
-        <p class="sub">
-            投稿日時：
-            {{ post.posted_at }}
-        </p>
-        <p class="sub">
-            更新日　：
-            {{ post.updated_at }}
-        </p>
+        <div>
+            <p class="post_date">
+                投稿日：{{ post.posted_at }}
+            </p>
+           <p class="post_date">
+                更新日：{{ post.updated_at }}
+            </p>
+        </div>
+
     </div>
     <hr />
     {% endfor %}

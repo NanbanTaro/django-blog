@@ -35,16 +35,34 @@ header .headline {
     color: white;
 }
 
-.main {
-    margin: 10px 50px;
-    color: black;
+.container {
+    margin: auto 40px auto 40px;
 }
 
-.sub {
-    margin: 0px 50px;
+.main {
+    margin: 10px 0 10px 0;
+    color: black;
 }
 
 .link {
     text-decoration: none;
     color: #555;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    gap: 0 30px;
+}
+
+.post_text {
+}
+
+.post_image {
+    max-width: 100%;
+}
+
+.post_date {
+    text-align: right;
+    font-size: 0.8em
 }
